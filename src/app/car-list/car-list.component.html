@@ -1,0 +1,24 @@
+<button routerLink="/create" class="right floated ui teal icon button" style="margin: 10px;">
+  <i class="icon add"></i> Add New Car
+</button>
+
+<table class="ui selectable single line table">
+  <thead>
+  <tr>
+    <th>Brand</th>
+    <th>Model</th>
+    <th style="text-align: center">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let car of carList | async">
+    <td>{{car.brand}}</td>
+    <td>{{car.model}}</td>
+    <td style="text-align: center">
+      <button class="ui small blue button" (click)="carDetails(car.id)">View</button>
+      <button class="ui small yellow button" (click)="updateCar(car.id)">Update</button>
+      <button class="ui small red button" (click)="deleteCar(car.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

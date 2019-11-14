@@ -1,0 +1,31 @@
+<h3 class="ui header" style="margin-top: 80px;">{{formLabel}} Car</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" class="ui form">
+    <div hidden>
+      <label for="id">ID</label>
+      <input type="text" id="id" required [(ngModel)]="car.id" name="id">
+    </div>
+
+    <div class="field">
+      <label for="brand" >Brand</label>
+      <input type="text" id="brand" required [(ngModel)]="car.brand" name="brand">
+    </div>
+
+    <div class="field">
+      <label for="model">Model</label>
+      <input type="text" id="model" required [(ngModel)]="car.model" name="model">
+    </div>
+
+    <div class="field">
+      <label for="price">Price</label>
+      <input type="number" id="price" required [(ngModel)]="car.price" name="price">
+    </div>
+
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
